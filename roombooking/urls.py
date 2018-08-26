@@ -18,4 +18,7 @@ from . import views
 
 urlpatterns = [
     path('', views.roombooking_home),
+#    path(f'/{date}', views.roombooking_detail),
+#    path('/booking', views.roombooking_booking),
+#    path('/counselour', views.roombooking_counselour),
 ]
