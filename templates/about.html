@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>About Us</title>
-  </head>
-  <body>
+{% extends 'base.html' %}
+{%block title %}About Us{% endblock %}
+{% block breadcrumb %}
+<li class="breadcrumb-item"><a href="/">Home</a></li>
+<li class="breadcrumb-item active" aria-current="page">About Us</a></li>
+{% endblock %}
+{% block content %}
+<div class="container">
     <h1>About Us</h1>
-    <p>We are ....</p>
-  </body>
-</html>
+    <p>we are devs</p>
+</div>
+{% endblock %}
