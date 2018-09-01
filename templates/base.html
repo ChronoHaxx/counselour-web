@@ -77,6 +77,19 @@
 </nav>
   <body>
     <div class="sidenav">
+      {% for instance in instances %}
+      {% if instance.availability == True %}
+      <p>
+        hello
+      </p>
+      <a>{{ instance }}<span class="label label-success">Available</span></a>
+      {%else%}
+      <p>
+        no
+      </p>
+      <a>{{ instance }}<span class="label label-danger">Not Available</span></a>
+      {% endif %}
+      {% endfor %}
      <a href="#about">About</a>
      <a href="#services">Services</a>
      <a href="#clients">Clients</a>
