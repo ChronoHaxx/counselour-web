@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'counselour_web',
     'roombooking',
     'boards',
+    'studentdb',
 ]
 
 MIDDLEWARE = [

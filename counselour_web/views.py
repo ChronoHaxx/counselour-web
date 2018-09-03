@@ -3,7 +3,7 @@ from django.shortcuts import render
 from roombooking.models import Status
 
 def homepage(request):
-    status = Status.instance
+    status = Status
     #return HttpResponse('Welcome to my website')
     return render(request,'homepage.html',{'instance':status})
 
