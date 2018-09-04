@@ -1,7 +1,8 @@
-# counselour-web
-Repo in progress to build a website for my school's counselour
-Built with Django 2.0.2
-Feel free to help me :D
+#counselour-web
+My school Counselling Department website.
 
-Target : Room booking page 
+[![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
+[![Django Version](https://img.shields.io/badge/django-1.11-brightgreen.svg)](https://djangoproject.com)
+
+Target : Room booking page
 ![Img](https://github.com/ChronoHaxx/counselour-web/blob/master/roombooking_home.PNG?raw=true)
