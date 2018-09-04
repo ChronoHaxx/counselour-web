@@ -17,6 +17,7 @@ from django.urls import path
 from . import views
 
 urlpatterns = [
+#    path('', views.AgendaList.as_view()),
     path('', views.roombooking_home),
 #    path(f'/{date}', views.roombooking_detail),
 #    path('/booking', views.roombooking_booking),

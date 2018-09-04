@@ -9,19 +9,11 @@
 
   <h1>STUDENT DATABASE HERE</h1>
 
-  <div class="input-group" >
-    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
-      <option selected>Batch</option>
-      <option value="1">Form 1</option>
-      <option value="2">Form 2</option>
-      <option value="3">Form 3</option>
-      <option value="4">Form 4</option>
-      <option value="5">Form 5</option>
-    </select>
-    <div class="input-group-append">
-      <button class="btn btn-outline-secondary" type="button">Go</button>
-    </div>
-  </div>
+  <a href="{% url "form1" %}"><button type="button" class="btn btn-outline-primary">Form 1</button></a>
+  <a href="{% url "form2" %}"><button type="button" class="btn btn-outline-secondary">Form 2</button></a>
+  <a href="{% url "form3" %}"><button type="button" class="btn btn-outline-success">Form 3</button></a>
+  <a href="{% url "form4" %}"><button type="button" class="btn btn-outline-danger">Form 4</button></a>
+  <a href="{% url "form5" %}"><button type="button" class="btn btn-outline-warning">Form 5</button></a>
 
   <ul class="nav nav-tabs">
     <li class="nav-item">

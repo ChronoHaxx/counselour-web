@@ -4,7 +4,7 @@ from django.db import models
 class Student(models.Model):
     name = models.CharField(max_length=80)
     batch = models.CharField(max_length=1, default='4')
-    student_class = models.CharField(max_length=3)
+    student_class = models.CharField(max_length=3, default='2')
     no_kp = models.CharField(max_length=6, unique=True, primary_key=True)
     homeroom = models.CharField(max_length = 50)
     child_no = models.CharField(max_length=10)
