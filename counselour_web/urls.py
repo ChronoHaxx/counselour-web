@@ -22,6 +22,7 @@ urlpatterns = [
     path('roombooking/', include('roombooking.urls')),
     path('studentdb/', include('studentdb.urls')),
     path('boards/', include('boards.urls')),
+    path('accounts/', include('accounts.urls')),
     path('', views.homepage),
     path('about/', views.about),
 ]

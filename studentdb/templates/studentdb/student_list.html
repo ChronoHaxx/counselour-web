@@ -9,15 +9,44 @@
 
   <h1>STUDENT DATABASE HERE</h1>
 
-  <p>
-    <ul>
-    {% for student in object_list %}
-      <li>
-        <a href="{{student.no_kp}}">{{ student.name }}</a>
-      </li>
-    {% endfor %}
-    </ul>
-  </p>
+  <div class="input-group" >
+    <select class="custom-select" id="inputGroupSelect04" aria-label="Example select with button addon">
+      <option selected>Batch</option>
+      <option value="1">Form 1</option>
+      <option value="2">Form 2</option>
+      <option value="3">Form 3</option>
+      <option value="4">Form 4</option>
+      <option value="5">Form 5</option>
+    </select>
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="button">Go</button>
+    </div>
+  </div>
+
+  <ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link active" href="#">Active</a>
+
+        <p>
+          <ul>
+          {% for student in object_list %}
+            <li>
+              <a href="{{student.no_kp}}">{{ student.name }}</a>
+            </li>
+          {% endfor %}
+          </ul>
+        </p>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Link</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" href="#">Disabled</a>
+    </li>
+  </ul>
 
 </div>
 {% endblock %}

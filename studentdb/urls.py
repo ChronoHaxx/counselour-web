@@ -18,4 +18,5 @@ from . import views
 
 urlpatterns = [
     path('', views.StudentList.as_view()),
+    path('<pk>/', views.StudentDetail.as_view())
 ]

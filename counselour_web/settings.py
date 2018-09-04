@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'roombooking',
     'boards',
     'studentdb',
+    'accounts',
 ]
 
 MIDDLEWARE = [
