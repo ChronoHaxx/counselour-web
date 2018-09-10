@@ -18,13 +18,13 @@ def signup(request):
             return redirect('home')
     else:
         form = SignUpForm()
-    return render(request, 'boards\signup.html', {'form': form})
+    return render(request, 'boards/signup.html', {'form': form})
 
 
 @method_decorator(login_required, name='dispatch')
 class UserUpdateView(UpdateView):
     form_class = UserInformationUpdateForm
-    template_name = 'boards\my_account.html'
+    template_name = 'boards/my_account.html'
     success_url = reverse_lazy('my_account')
 
     def get_object(self):
