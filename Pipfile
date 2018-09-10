@@ -1,0 +1,18 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+dj-database-url = "==0.4.2"
+django-widget-tweaks = "==1.4.1"
+python-decouple = "==3.1"
+Django = "==2.1"
+Markdown = "==2.6.9"
+gunicorn = "*"
+django-heroku = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.6"
