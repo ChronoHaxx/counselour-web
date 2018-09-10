@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 dj-database-url = "*"
-django-widget-tweaks = "==1.4.1"
+django-widget-tweaks = "*"
 python-decouple = "==3.1"
 Django = "==2.1"
 Markdown = "==2.6.9"
