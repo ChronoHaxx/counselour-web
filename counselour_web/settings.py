@@ -64,7 +64,9 @@ ROOT_URLCONF = 'counselour_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates',
+        os.path.join(BASE_DIR,'photos/templates/photos/templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
