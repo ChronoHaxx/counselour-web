@@ -61,10 +61,25 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'counselour_web.urls'
 
+
+
+# here() gives us file paths from the root of the system to the directory
+# holding the current file.
+here = lambda * x: os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
+
+PROJECT_ROOT = here("..")
+# root() gives us file paths from the root of the system to whatever
+# folder(s) we pass it starting at the parent directory of the current file.
+root = lambda * x: os.path.join(os.path.abspath(PROJECT_ROOT), *x)
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'],
+        'DIRS': ['templates',
+        os.path.join(BASE_DIR,'/templates/'),
+        root('templates'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
