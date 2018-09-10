@@ -7,7 +7,11 @@ from django.utils.decorators import method_decorator
 from django.views.generic import UpdateView
 
 from .forms import SignUpForm, UserInformationUpdateForm
+from django.contrib.auth import logout
 
+def logout_view(request):
+    logout(request)
+    return redirect('home')
 
 def signup(request):
     if request.method == 'POST':
