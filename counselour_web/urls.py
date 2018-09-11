@@ -23,6 +23,6 @@ urlpatterns = [
     path('studentdb/', include('studentdb.urls')),
     path('boards/', include('boards.urls')),
     path('accounts/', include('accounts.urls')),
-    path('', views.homepage),
+    path('', views.homepage, name = 'index'),
     path('about/', views.about),
 ]
