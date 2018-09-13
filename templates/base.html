@@ -8,89 +8,61 @@
     <link rel="stylesheet" href="{% static "boards/css/bootstrap.min.css" %}" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "boards/css/sticky-footer.css" %}">
 
+    </head>
 
-    <style>
-    .sidenav {
-        width: 130px;
-        position: fixed;
-        z-index: 1;
-        top: 200px;
-        right: 10px;
-        background: #eee;
-        overflow-x: hidden;
-        padding: 8px 0;
-    }
 
-    .sidenav a {
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #2196F3;
-        display: block;
-    }
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="{% static "boards/images/logo_mrsm.png" %}" alt="Logo MRSM" width="5%" height="5%" >
+      MRSM KuPa Counselling Department website..
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-    .sidenav a:hover {
-        color: #064579;
-    }
 
-    @media screen and (max-height: 450px) {
-        .sidenav {padding-top: 15px;}
-        .sidenav a {font-size: 18px;}
-    }
-    </style>
-
-  </head>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <img src="{% static "boards/logo_mrsm.png" %}" alt="Logo MRSM" width="5%" height="5%" >
-  MRSM KuPa Counselling Department website..
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Pages
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="/about">About Us</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="/boards">KuPa Boards</a>
-          <a class="dropdown-item" href="/studentdb">Student Database</a>
-          <a class="dropdown-item" href="/roombooking">Room Booking</a>
-        </div>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        {% if user.is_authenticated %}
-        <ul class="navbar-nav ml-auto">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+          </li>
           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              {{ user.username }}
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Pages
             </a>
-            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
-              <a class="dropdown-item" href="{% url 'my_account' %}">My account</a>
-              <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/about">About Us</a>
               <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+              <a class="dropdown-item" href="/boards">KuPa Boards</a>
+              <a class="dropdown-item" href="/studentdb">Student Database</a>
+              <a class="dropdown-item" href="/roombooking">Room Booking</a>
             </div>
           </li>
         </ul>
-      {% else %}
-        <form class="form-inline ml-auto">
-          <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
-          <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            {% if user.is_authenticated %}
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userMenu" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  {{ user.username }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userMenu">
+                  <a class="dropdown-item" href="{% url 'my_account' %}">My account</a>
+                  <a class="dropdown-item" href="{% url 'password_change' %}">Change password</a>
+                  <div class="dropdown-divider"></div>
+                  <a class="dropdown-item" href="{% url 'logout' %}">Log out</a>
+                </div>
+              </li>
+            </ul>
+          {% else %}
+            <form class="form-inline ml-auto">
+              <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
+              <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
+            </form>
+          {% endif %}
         </form>
-      {% endif %}
-    </form>
-  </div>
-</nav>
+      </div>
+    </nav>
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
