@@ -11,6 +11,9 @@ Django = "==2.1"
 Markdown = "==2.6.9"
 gunicorn = "*"
 django-heroku = "*"
+django-import-export = "*"
+django-scheduler = "*"
+django-bower = "*"
 
 [dev-packages]
 
