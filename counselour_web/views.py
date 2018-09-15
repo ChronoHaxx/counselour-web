@@ -10,3 +10,6 @@ def homepage(request):
 def about(request):
     #return HttpResponse('About Us')
     return render(request,'about.html')
+
+def element(request):
+    return render(request,'ui-elements.html')
