@@ -1,10 +1,10 @@
 {% load humanize %}
 {% load static %}
+<!-- Old base.html
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>{%block title %}Homepage{% endblock %}</title>
     <link rel="stylesheet" href="{% static "boards/css/bootstrap.min.css" %}" crossorigin="anonymous">
     <link rel="stylesheet" href="{% static "boards/css/sticky-footer.css" %}">
     </head>
@@ -53,7 +53,7 @@
               </li>
             </ul>
           {% else %}
-            <form class="form-inline ml-auto">
+              <form class="form-inline ml-auto">
               <a href="{% url 'login' %}" class="btn btn-outline-secondary">Log in</a>
               <a href="{% url 'signup' %}" class="btn btn-primary ml-2">Sign up</a>
             </form>
@@ -68,18 +68,203 @@
   {% endblock %}
   </ol>
 </nav>
-  <body>
+-->
+<!DOCTYPE html>
+<html >
+<head>
+  <title>{% block title %}Homepage{% endblock %}</title>
+  <!-- Site made with Mobirise Website Builder v4.8.3, https://mobirise.com -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v4.8.3, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="icon" type="image/png" href="{% static 'assets/images/favicon-32x32.png' %}" sizes="32x32" />
+  <link rel="icon" type="image/png" href="{% static 'assets/images/favicon-16x16.png' %}" sizes="16x16" />
+  <link rel="shortcut icon" href="{% static 'assets/images/logo20maktab20rendah20sains20mara20mrsm-122x93.png' %}" type="image/x-icon">
+  <meta name="description" content="">
+  <link rel="stylesheet" href="{% static 'boards/css/bootstrap.min.css' %}" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'boards/css/sticky-footer.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons/mobirise-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/web/assets/mobirise-icons-bold/mobirise-icons-bold.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/tether/tether.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/soundcloud-plugin/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-grid.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/bootstrap/css/bootstrap-reboot.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/dropdown/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/socicon/css/styles.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/theme/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/mobirise/css/mbr-additional.css' %}" type="text/css">
+
+</head>
+<body>
+  <section class="menu cid-qJ7KAQL3Sr" once="menu" id="menu1-0">
+
+
+
+    <nav class="navbar navbar-expand beta-menu navbar-dropdown align-items-center navbar-fixed-top navbar-toggleable-sm">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </button>
+        <div class="menu-logo">
+            <div class="navbar-brand">
+                <span class="navbar-logo">
+                    <a href="https://mrsm.com" target="_blank">
+                         <img src="{% static 'assets/images/logo20maktab20rendah20sains20mara20mrsm-122x93.png' %}" alt="Mobirise" title="" style="height: 3.8rem;">
+                    </a>
+                </span>
+                <span class="navbar-caption-wrap"><a class="navbar-caption text-success display-5" href="/">KUPA COUNSELOUR</a></span>
+            </div>
+        </div>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
+              <li class="nav-item"><a class="nav-link link text-white display-4" href="/boards"><span class="mbri-sites mbr-iconfont mbr-iconfont-btn"></span>C-Forum</a></li>
+              <li class="nav-item"><a class="nav-link link text-white display-4" href="/studentdb"><span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span>Student Database</a></li>
+              <li class="nav-item"><a class="nav-link link text-white display-4" href="/roombooking"><span class="mbri-calendar mbr-iconfont mbr-iconfont-btn"></span>C-Booking</a></li><li class="nav-item"><a class="nav-link link text-white display-4" href="https://mobirise.com"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>Search</a></li>
+                <li class="nav-item">
+                    <a class="nav-link link text-white display-4" href="https://mobirise.com">
+                        </a>
+                </li></ul>
+            <div class="navbar-buttons mbr-section-btn"><a class="btn btn-sm btn-primary display-4" href="https://kupacounselour.herokuapp.com/accounts/login"><span class="mbri-arrow-down mbr-iconfont mbr-iconfont-btn"></span>Login</a></div>
+        </div>
+    </nav>
+</section>
+<style>
+/* Mobirise */
+.downer{
+  bottom: -75px;
+}
+</style>
+  <body class="downer">
     {% block content %}
     {% endblock %}
   </body>
 
+  <section class="footer3 cid-r4f5xWalaM mbr-reveal" id="footer3-c">
+
+
+
+
+
+      <div class="container">
+          <div class="media-container-row content">
+              <div class="col-md-2 col-sm-4">
+                  <div class="mb-3 img-logo">
+                      <a href="https://mobirise.com/">
+                           <img src='{% static "assets/images/logo20maktab20rendah20sains20mara20mrsm-192x146.png" %}' alt="Mobirise" title="">
+                      </a>
+                  </div>
+                  <p class="mbr-fonts-style foot-logo display-7">
+                      MRSM KuPa</p>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                  <p class="mb-4 mbr-fonts-style foot-title display-7">
+                      RECENT NEWS
+                  </p>
+                  <p class="mbr-text mbr-links-column mbr-fonts-style display-7">
+                      <a href="#" class="text-black">About us</a>
+                      <br>Get In Touch</p>
+              </div>
+              <div class="col-md-3 col-sm-4">
+                  <p class="mb-4 mbr-fonts-style foot-title display-7">
+                      CATEGORIES
+                  </p>
+                  <p class="mbr-text mbr-fonts-style mbr-links-column display-7">C-Forum<br>Student Database<br>C-Booking</p>
+              </div>
+              <div class="col-md-4 col-sm-12">
+                  <p class="mb-4 mbr-fonts-style foot-title display-7">
+                      SUBSCRIBE
+                  </p>
+                  <p class="mbr-text form-text mbr-fonts-style display-7">
+                      Get monthly updates and free resources.
+                  </p>
+                  <div class="media-container-column" data-form-type="formoid">
+                      <div data-form-alert="" hidden="" class="align-center">Thanks for filling out the form!</div>
+
+                      <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
+                          <input type="hidden" value="aJ07boGEKYPnOC4juEDxh27PnzZik8EBYmnuB7JgPkiUGvCC9GxGzhRAnUUKbC7jV2cXVgRg1qVYrT06trOu4ZbxcUkSR1c3nItJTgZdHCELaHeLoT+PlNUnI5HituTw" data-form-email="true">
+                          <div class="form-group">
+                              <input type="email" class="form-control input-sm input-inverse my-2" name="email" required="" data-form-field="Email" placeholder="Email" id="email-footer3-c">
+                          </div>
+                          <div class="input-group-btn m-2"><button href="" class="btn btn-primary display-4" type="submit" role="button">Subscribe</button></div>
+                      </form>
+                  </div>
+
+              </div>
+          </div>
+          <div class="footer-lower">
+              <div class="media-container-row">
+                  <div class="col-sm-12">
+                      <hr>
+                  </div>
+              </div>
+              <div class="media-container-row">
+                  <div class="col-sm-6 copyright">
+                      <p class="mbr-text mbr-fonts-style display-7">
+                          © Copyright 2018 MRSM Kubang Pasu - All Rights Reserved
+                      </p>
+                  </div>
+                  <div class="col-md-6">
+                      <div class="social-list align-right">
+                          <div class="soc-item">
+                              <a href="https://twitter.com/mobirise" target="_blank">
+                                  <span class="socicon-twitter socicon mbr-iconfont mbr-iconfont-social"></span>
+                              </a>
+                          </div>
+                          <div class="soc-item">
+                              <a href="https://www.facebook.com/pages/Mobirise/1616226671953247" target="_blank">
+                                  <span class="socicon-facebook socicon mbr-iconfont mbr-iconfont-social"></span>
+                              </a>
+                          </div>
+                          <div class="soc-item">
+                              <a href="https://www.youtube.com/c/mobirise" target="_blank">
+                                  <span class="socicon-youtube socicon mbr-iconfont mbr-iconfont-social"></span>
+                              </a>
+                          </div>
+                          <div class="soc-item">
+                              <a href="https://instagram.com/mobirise" target="_blank">
+                                  <span class="socicon-instagram socicon mbr-iconfont mbr-iconfont-social"></span>
+                              </a>
+                          </div>
+                          <div class="soc-item">
+                              <a href="https://plus.google.com/u/0/+Mobirise" target="_blank">
+                                  <span class="socicon-googleplus socicon mbr-iconfont mbr-iconfont-social"></span>
+                              </a>
+                          </div>
+                          <div class="soc-item">
+                              <a href="https://www.behance.net/Mobirise" target="_blank">
+                                  <span class="socicon-behance socicon mbr-iconfont mbr-iconfont-social"></span>
+                              </a>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+    <script src='{% static "assets/web/assets/jquery/jquery.min.js" %}'></script>
+    <script src='{% static "assets/popper/popper.min.js" %}'></script>
+    <script src='{% static "assets/tether/tether.min.js" %}'></script>
+    <script src='{% static "assets/bootstrap/js/bootstrap.min.js" %}'></script>
+    <script src='{% static "assets/dropdown/js/script.min.js" %}'></script>
+    <script src='{% static "assets/playervimeo/vimeo_player.js" %}'></script>
+    <script src='{% static "assets/parallax/jarallax.min.js" %}'></script>
+    <script src='{% static "assets/countdown/jquery.countdown.min.js" %}'></script>
+    <script src='{% static "assets/smoothscroll/smooth-scroll.js" %}'></script>
+    <script src='{% static "assets/touchswipe/jquery.touch-swipe.min.js" %}'></script>
+    <script src='{% static "assets/theme/js/script.js" %}'></script>
+    <script src='{% static "assets/formoid/formoid.min.js" %}'></script>
+
+  <!-- old js
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="{% static "boards/js/bootstrap.min.js" %}" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-
-  <footer class="footer">
-    <div class="container-footer">
-      <span class="text-muted">Place sticky footer content here.</span>
-    </div>
-  </footer>
+-->
 </html>
