@@ -25,4 +25,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', views.homepage, name = 'index'),
     path('about/', views.about),
+    path('uglysyamimi/', views.uglysyamimi),
 ]

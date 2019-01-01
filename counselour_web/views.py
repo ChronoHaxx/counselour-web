@@ -10,3 +10,7 @@ def homepage(request):
 def about(request):
     #return HttpResponse('About Us')
     return render(request,'about.html')
+
+def uglysyamimi(request):
+    #PORTFOLIO SYAMIMI FOR HER BIRTHDAY
+    return render(request,'ulgysyamimi.html')
