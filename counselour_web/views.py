@@ -13,4 +13,4 @@ def about(request):
 
 def uglysyamimi(request):
     #PORTFOLIO SYAMIMI FOR HER BIRTHDAY
-    return render(request,'ulgysyamimi.html')
+    return render(request,'uglysyamimi.html')
