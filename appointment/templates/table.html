@@ -40,7 +40,7 @@
           var yyyy = today.getFullYear();
           today = mm + '/' + dd + '/' + yyyy;
           //var baseurl =  window.location.hostname
-          var baseurl = window.location.hostname
+          var baseurl = 'https://' + window.location.hostname
 
           $('#querydate').submit( function() {             
             goUrl = baseurl + '/appointment/view/' + $('#datepicker').val();
