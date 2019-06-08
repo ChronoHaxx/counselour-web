@@ -1,0 +1,121 @@
+/*TIMETABLE*/
+
+.timetable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .timetable .button-options {
+    position: fixed;
+    width: 100%;
+    background: gray;
+    height: 10%;
+    top: 0;
+    left: 0;
+  }
+  
+  .timetable .button-options th {
+    box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.2);
+    width: 10%;
+  }
+  
+  .timetable .layoutdesign {
+    margin-top: 12vh;
+    background: white;
+    font-size: 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .timetable * {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  
+  .timetable .layoutdesign .row div {
+    width: 100px;
+    display: inline-block;
+    font-size: initial;
+    height: 5vh;
+    border-left: 2px dashed rgba(0, 0, 0, 0.1);
+    text-align: left;
+    vertical-align: top;
+  }
+  
+  .timetable .layoutdesign .row div:first-child {
+    width: 10%;
+    border: none;
+  }
+  
+  .timetable .layoutdesign .row:not(:first-child) div {
+    height: 10vh;
+    border-top: 2px dashed rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .timetable .layoutdesign .row div:first-child {
+    position: fixed;
+    background: gray;
+    z-index: 30;
+  }
+  
+  .timetable .layoutdesign .row div:nth-child(2) {
+    margin-left: 10vw
+  }
+  
+  .timetable form {
+    margin-top: 20px;
+  }
+  
+  .timetable .film {
+    position: absolute;
+    background: gold;
+    box-shadow: inset 0 0 0 2px #222;
+    height: 5vh;
+    border-radius:5px;
+    line-height: 5vh;
+    color: #222;
+    background:gold;
+    font-size: 15px;overflow:hidden;
+    text-align: center;
+  }
+  
+  .timetable .film:before {
+    content: attr(data-start);
+    position: absolute;
+    top: 2px;
+    color: #222;height:10px;
+    font-size: 10px;
+    line-height:10px;
+    left:2px;
+  }
+  
+  .timetable .film.activeFilm {
+    background: red;
+  }
+  
+  .selectable .active{
+      background:red !important;
+  }
+  
+  /*Ticket Section*/
+  .filmSelector{
+    width:100%;
+    height:98px;margin-top:20px;
+    overflow:hidden;background:rgba(0,0,0,0.2);
+  }
+  .filmSelector .slot{display:inline-block;margin:5px; border:5px solid black; padding:10px; width:15%;text-align:center;background:#eee;color:#222;
+  }
+  .filmSelector .time.slot{background:#222;color:#eee}
+  .filmSelector .slot:active{background:gold;color:#222;}
+  .filmSelector:hover{height:150px;}
+  
+  .filmSelector .time.slot.active{background:gold;color:#222;}
+  
+  

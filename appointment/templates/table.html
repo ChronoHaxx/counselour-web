@@ -1,0 +1,263 @@
+{% load mathfilters %}
+{% load index %}
+{% load has_group %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Appointment</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="{% static 'appointment/timetable.css' %}">
+    <script type="text/javascript">
+
+      var appointments = '{{ appointments }}';
+      appointments = JSON.parse(appointments.replace(/&quot;/g,'"'));
+      </script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js">
+    </script>
+    <script type="text/javascript" src="{% static 'appointment/timetable.js' %}"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!--activate the datepicker-->
+    <script>
+    $( function() {
+      $( "#datepicker" ).datepicker();
+    } );
+    </script>
+    <!--redirect the date inserted to the url and the three buttons-->
+    <script>
+        $(document).ready(function() {
+          //getting current date
+          var today = new Date();
+          var dd = String(today.getDate()).padStart(2, '0');
+          var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+          var yyyy = today.getFullYear();
+          today = mm + '/' + dd + '/' + yyyy;
+          //var baseurl =  window.location.hostname
+          var baseurl = window.location.hostname
+
+          $('#querydate').submit( function() {             
+            goUrl = baseurl + '/appointment/view/' + $('#datepicker').val();
+            location.href = goUrl;
+            return false;  // Prevent the default form behaviour
+        });
+
+          $('#querydate').submit( function() {             
+               goUrl = baseurl + '/appointment/view/' + $('#datepicker').val();
+               location.href = goUrl;
+               return false;  // Prevent the default form behaviour
+          });
+
+          $('#today').submit( function() {                        
+            goUrl = baseurl + '/appointment/view/' + today;
+            location.href = goUrl;
+            return false;  // Prevent the default form behaviour
+          });
+
+          $('#before').submit( function() {
+            //reading the url and isolating the date part
+            var url = "{{ request.path }} ";
+            url = url.split('/');
+            var mm = url[3];
+            var dd = url[4];
+            var yyyy = url[5];
+            //parsing new date base on url data
+            var today = new Date(yyyy, mm, dd);
+            //decreasing date by 1
+            today.setDate(today.getDate()-1);
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() ).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            today = mm + '/' + dd + '/' + yyyy; 
+            goUrl = baseurl + '/appointment/view/' + today;
+            location.href = goUrl;
+            return false;  // Prevent the default form behaviour
+          });
+
+          $('#after').submit( function() {
+            //reading the url and isolating the date part
+            var url = "{{ request.path }} ";
+            url = url.split('/');
+            var mm = url[3];
+            var dd = url[4];
+            var yyyy = url[5];
+            //parsing new date base on url data
+            var today = new Date(yyyy, mm, dd);
+            //increasing date by 1
+            today.setDate(today.getDate()+1);
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() ).padStart(2, '0'); //January is 0!
+            var yyyy = today.getFullYear();
+            today = mm + '/' + dd + '/' + yyyy; 
+            goUrl = baseurl + '/appointment/view/' + today;
+            location.href = goUrl;
+            return false;  // Prevent the default form behaviour
+          });
+     });
+    </script>
+
+</head>
+<body>
+    <div class="timetable">
+        <table class="button-options">
+            <tr>
+                <th><a href="{% url 'index' %}">Homepage</a></th>
+                <th id="addFilm"><a href="{% url 'appointment-new' %}">Add Appointment</a></th>
+                <th>
+                  <h5 id="date_display"> </h5></th> 
+                  <script>
+                      //reading the url and isolating the date part
+                      var url = "{{ request.path }} ";
+                      url = url.split('/');
+                      var mm = url[3];
+                      var dd = url[4];
+                      var yyyy = url[5];
+                      var today = mm + '/' + dd + '/' + yyyy;
+                      //parsing new date base on short date format
+                      today = new Date(today).toString()
+                      //removing unnecessary detail such as GMT+8
+                      today_chr = today.split(' ')
+                      today = today_chr[0] + ' ' +  today_chr[1] + ' ' + today_chr[2] + ' ' + today_chr[3] 
+                      console.log(today);
+                      document.getElementById("date_display").innerHTML = "Date : " + today;
+                  </script>               
+                <th>
+                    <form id="querydate" >
+                        <p>Go to date: <input type="text" id="datepicker"></p>
+                        <input type="submit" value="Go">
+                    </form>
+                </th>                
+                <th><form id="before"><input type="submit" value="Go a day before"></form></th>
+                <th><form id="today"><input type="submit" value="Go to Today"></form></th>
+                <th><form id="after"><input type="submit" value="Go a day after "></form></th>
+                <th><a href="{% url 'appointment-list' %}">My Appointments</a>
+                {% if request.user|has_group:"Counselour" %}
+                  | <a href="{% url 'appointment-admin' %}">Admin</a>
+                {% endif %}
+                </th>
+            </tr>
+        </table>
+        <div class="layoutdesign">
+          <div class="row">
+                <div></div>
+                <div>00:00</div>
+                <div>01:00</div>
+                <div>02:00</div>
+                <div>03:00</div>
+                <div>04:00</div>
+                <div>05:00</div>
+                <div>06:00</div>
+                <div>07:00</div>
+                <div>08:00</div>
+                <div>09:00</div>
+                <div>10:00</div>
+                <div>11:00</div>
+                <div>12:00</div>
+                <div>13:00</div>
+                <div>14:00</div>
+                <div>15:00</div>
+                <div>16:00</div>
+                <div>17:00</div>
+                <div>18:00</div>
+                <div>19:00</div>
+                <div>20:00</div>
+                <div>21:00</div>
+                <div>22:00</div>
+                <div>23:00</div>
+                <div>24:00</div>
+          
+          </div>
+          <div class="row">
+                <div>Cg. Fazilawati</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+          </div>
+          <div class="row">
+                <div>Cg. Ainul</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+          </div>
+          <div class="row">
+                <div>BILIK 3R</div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+          </div>
+        </div>
+    </div>
+</body>
+</html>

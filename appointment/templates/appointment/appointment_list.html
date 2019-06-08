@@ -1,0 +1,19 @@
+{% load widget_tweaks %}
+
+{% block title %}My appointment{% endblock %}
+
+{% block breadcrumb %}
+  <li class="breadcrumb-item active">My appointments</li>
+{% endblock %}
+
+{% block content %}
+<h1>Client = {{ user.get_username }}</h1>
+<ul>
+{% for appointment in object_list %}
+    
+    <li>Objective = {{ appointment.objective }} | {{ appointment.get_rooom_display }} |{{ appointment.start_time|date }} - {{ appointment.start_time|time }} until {{ appointment.end_time|time }} | approved : {{ appointment.approval }}</li>
+{% empty %}
+    <li>No appointment yet.</li>
+{% endfor %}
+</ul>
+{% endblock content %}

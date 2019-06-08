@@ -45,10 +45,16 @@ INSTALLED_APPS = [
     'djangobower',
 
     'counselour_web',
-    'roombooking',
     'boards',
     'studentdb',
     'accounts',
+
+    #apps
+    'appointment',
+    #template_filters
+    'mathfilters',
+    #external modules
+    'tempus_dominus',   
 ]
 
 MIDDLEWARE = [
@@ -90,6 +96,10 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+                    'libraries':{
+            'index': 'appointment.templatetags.index',
+            'has_group': 'appointment.templatetags.has_group',
+            }
         },
     },
 ]

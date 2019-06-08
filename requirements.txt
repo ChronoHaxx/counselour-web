@@ -1,5 +1,25 @@
-dj-database-url==0.4.2
-Django==2.1
-django-widget-tweaks==1.4.1
-Markdown==2.6.9
+################################################################################
+# This requirements file has been automatically generated from `Pipfile` with
+# `pipenv-to-requirements`
+#
+#
+# This has been done to maintain backward compatibility with tools and services
+# that do not support `Pipfile` yet.
+#
+# Do NOT edit it directly, use `pipenv install [-d]` to modify `Pipfile` and
+# `Pipfile.lock` and then regenerate `requirements*.txt`.
+################################################################################
+
+dj-database-url
+django
+django-bower
+django-extensions
+django-heroku
+django-import-export
+django-mathfilters
+django-scheduler
+django-tempus-dominus
+django-widget-tweaks
+gunicorn
+markdown==2.6.9
 python-decouple==3.1

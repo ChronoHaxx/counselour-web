@@ -7,15 +7,19 @@ name = "pypi"
 dj-database-url = "*"
 django-widget-tweaks = "*"
 python-decouple = "==3.1"
-Django = "==2.1"
+Django = "*"
 Markdown = "==2.6.9"
 gunicorn = "*"
 django-heroku = "*"
 django-import-export = "*"
 django-scheduler = "*"
 django-bower = "*"
+django-mathfilters = "*"
+django-extensions = "*"
+django-tempus-dominus = "*"
 
 [dev-packages]
+pylint = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "*"
