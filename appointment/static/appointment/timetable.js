@@ -13,7 +13,6 @@ $(document).ready(function() {
     hour_start = parseInt(hour_start.join(""));
     //the algorithm to get right time back is to add 8. due to gmt+8 ,thus subtracting 24 if exceeded 24
     
-    hour_start += 8;
     hour_start_for24h = hour_start
     if (hour_start > 24){
       hour_start -= 24;
@@ -33,7 +32,6 @@ $(document).ready(function() {
     hour_end.push(appointments[k].fields.end_time.split('')[11]);
     hour_end.push(appointments[k].fields.end_time.split('')[12]);
     hour_end = parseInt(hour_end.join(""));
-    hour_end += 8;
     hour_end_for24h = hour_end
     if (hour_end >= 24){
       hour_end -= 24;
