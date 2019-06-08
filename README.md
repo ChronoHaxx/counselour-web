@@ -1,4 +1,4 @@
-#counselour-web
+# counselour-web
 My school Counselling Department website.
 
 [![Python Version](https://img.shields.io/badge/python-3.6-brightgreen.svg)](https://python.org)
