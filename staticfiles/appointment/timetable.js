@@ -13,7 +13,6 @@ $(document).ready(function() {
     hour_start = parseInt(hour_start.join(""));
     //the algorithm to get right time back is to add 8. due to gmt+8 ,thus subtracting 24 if exceeded 24
     
-    hour_start += 8;
     hour_start_for24h = hour_start
     if (hour_start > 24){
       hour_start -= 24;
