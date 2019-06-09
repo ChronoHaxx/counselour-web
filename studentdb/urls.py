@@ -22,7 +22,7 @@ urlpatterns = [
     path('3/', views.StudentBatch3List.as_view(), name = "form3"),
     path('4/', views.StudentBatch4List.as_view(), name = "form4"),
     path('5/', views.StudentBatch5List.as_view(), name = "form5"),
-    path('', views.StudentList.as_view()),
+    path('', views.StudentList.as_view(), name = 'studentdb_index'),
     path('1/<pk>/', views.StudentDetail.as_view(), name = "studentdetail"),
     path('2/<pk>/', views.StudentDetail.as_view(), name = "studentdetail"),
     path('3/<pk>/', views.StudentDetail.as_view(), name = "studentdetail"),

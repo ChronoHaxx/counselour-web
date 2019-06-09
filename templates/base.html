@@ -141,8 +141,8 @@
         </div>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav nav-dropdown" data-app-modern-menu="true">
-              <li class="nav-item"><a class="nav-link link text-white display-4" href="/boards"><span class="mbri-sites mbr-iconfont mbr-iconfont-btn"></span>C-Forum</a></li>
-              <li class="nav-item"><a class="nav-link link text-white display-4" href="/studentdb"><span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span>Student Database</a></li>
+              <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'boards_index' %}"><span class="mbri-sites mbr-iconfont mbr-iconfont-btn"></span>C-Forum</a></li>
+              <li class="nav-item"><a class="nav-link link text-white display-4" href="{% url 'studentdb_index' %}"><span class="mbrib-user mbr-iconfont mbr-iconfont-btn"></span>Student Database</a></li>
               <li class="nav-item"><a class="nav-link link text-white display-4" href="#" onclick="RedirectURL();return false;" ><span class="mbri-calendar mbr-iconfont mbr-iconfont-btn"></span>C-Booking</a></li>
               <li class="nav-item"><a class="nav-link link text-white display-4" href="#"><span class="mbri-search mbr-iconfont mbr-iconfont-btn"></span>Search</a></li>
                 {% if user.is_authenticated %}

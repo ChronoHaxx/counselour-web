@@ -33,7 +33,7 @@
 
             <div class="container mt-5 pt-5 pb-5">
                 <div class="media-container-column" data-form-type="formoid">
-                    <div data-form-alert="" hidden="">Thanks for filling out the form!</div>
+                    <div data-form-alert="" hidden="">Thanks for filling out the form! (Dummy form for now)</div>
 
                     <form class="form-inline" action="https://mobirise.com/" method="post" data-form-title="Mobirise Form">
                         <input type="hidden" value="aEQRcJMIjGyyA4mjm13NyCnb+xrVNgYDsZVTMifF4JkvWS4jlbaodZfON9XG7k4JHVlN8V5cHKqPPLiTa/wNp9CcrvQt5F7FADHhP37aJzX3d5VS0M8ztIVlHH5F01F6" data-form-email="true">
@@ -101,9 +101,9 @@
             <div class="media-container-row">
                 <div class="mbr-text counter-container col-12 col-md-8 mbr-fonts-style display-7">
                     <ul>
-                        <li><strong>C-BOOKING</strong>&nbsp;- Simplified and enhanced new system for students and teachers to book &nbsp;appointments for counselling sessions.&nbsp;<a href="https://kupacounselour.herokuapp.com/roombooking">Try it now!</a></li>
-                        <li><strong>STUDENT DATABASE&nbsp;</strong>- Remastered database of students from a counselour point of view in which any teachers can access to anytime . &nbsp;<a href="https://kupacounselour.herokuapp.com/student">Try it now!</a></li>
-                        <li><strong>C-Forum&nbsp;</strong>- Beautifully handcrafted web-forum for anyone even not from MRSM KuPa to just talk about anything . T&amp;C apply.&nbsp;<a href="https://kupacounselour.herokuapp.com/boards">Try it now!</a></li>
+                        <li><strong>C-BOOKING</strong>&nbsp;- Simplified and enhanced new system for students and teachers to book &nbsp;appointments for counselling sessions.&nbsp;<a href="{% url 'boards_index' %}">Try it now!</a></li>
+                        <li><strong>STUDENT DATABASE&nbsp;</strong>- Remastered database of students from a counselour point of view in which any teachers can access to anytime . &nbsp;<a href="{% url 'studentdb_index' %}">Try it now!</a></li>
+                        <li><strong>C-Forum&nbsp;</strong>- Beautifully handcrafted web-forum for anyone even not from MRSM KuPa to just talk about anything . T&amp;C apply.&nbsp;<a href="#" onclick="RedirectURL();return false;">Try it now!</a></li>
                     </ul>
                 </div>
             </div>
